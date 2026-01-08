@@ -1,4 +1,4 @@
-package com.example.trendtrove
+package com.example.trendtrove.core
 
 sealed class DataState<T>(
 
