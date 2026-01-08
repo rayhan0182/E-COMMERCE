@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".registrationFragment">
+    tools:context=".view.registrationFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="@dimen/_125sdp"
@@ -28,7 +29,6 @@
         android:textColor="#044462"
         android:textSize="@dimen/_16ssp"
         android:textStyle="bold"
-
         />
 
 
@@ -82,7 +82,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/click_save"
+        android:id="@+id/reg_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"

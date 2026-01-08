@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.trendtrove.startFragment"
+        android:name="com.example.trendtrove.starter.startFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.trendtrove.registrationFragment"
+        android:name="com.example.trendtrove.view.registrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.trendtrove.loginFragment"
+        android:name="com.example.trendtrove.view.loginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.trendtrove.dashboardFragment"
+        android:name="com.example.trendtrove.view.dashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>

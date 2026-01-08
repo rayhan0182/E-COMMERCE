@@ -7,14 +7,14 @@
     android:background="#ffffff"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".startFragment">
+    tools:context=".starter.startFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_120sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/ecommeranim"
+        app:lottie_rawRes="@raw/ecommerceanim"
         app:lottie_loop="true"
         />
 
@@ -25,7 +25,6 @@
         android:text="TrendTrove"
         android:textSize="@dimen/_14ssp"
         android:textColor="#0B2F4D"
-
         />
 
     <com.google.android.material.button.MaterialButton

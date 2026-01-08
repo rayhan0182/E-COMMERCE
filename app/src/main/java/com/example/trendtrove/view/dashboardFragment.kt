@@ -1,10 +1,11 @@
-package com.example.trendtrove
+package com.example.trendtrove.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.trendtrove.R
 
 class dashboardFragment : Fragment() {
 
