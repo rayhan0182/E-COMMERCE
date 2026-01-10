@@ -15,8 +15,11 @@ import com.example.trendtrove.databinding.FragmentLoginBinding
 import com.example.trendtrove.fragment.BaseFragment
 import com.example.trendtrove.isempty
 import com.example.trendtrove.vmodel.VieModel
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 
+@AndroidEntryPoint
  class loginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
     private val viewmdell : VieModel by viewModels()
      override fun usercreate() {
@@ -70,7 +73,7 @@ import kotlin.getValue
 
                      progress.dismiss()
 
-                     Toast.makeText(context,"successful Created:${it.udata}", Toast.LENGTH_LONG).show()
+                     Toast.makeText(context,"successful Created:${it.udata}", Toast.LENGTH_SHORT).show()
 
                      findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
 
@@ -82,6 +85,8 @@ import kotlin.getValue
 
 
      }
+
+
 
 
  }

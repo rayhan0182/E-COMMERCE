@@ -8,28 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.trendtrove.R
 import com.example.trendtrove.databinding.FragmentStartBinding
+import com.example.trendtrove.fragment.BaseFragment
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-class startFragment : Fragment() {
+@AndroidEntryPoint
+class startFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::inflate) {
 
-    lateinit var binding: FragmentStartBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun usercreate() {
 
-        binding = FragmentStartBinding.inflate(inflater,container,false)
-
-
-        clicklistner()
-
-
-
-        return binding.root
-    }
-
-    private fun clicklistner() {
-
-        with(binding){
+        with(binding) {
 
 
             logIn.setOnClickListener {
@@ -38,22 +26,19 @@ class startFragment : Fragment() {
 
             }
 
-             signUp.setOnClickListener {
+            signUp.setOnClickListener {
 
-                 findNavController().navigate(R.id.action_startFragment_to_registrationFragment)
-
-
-             }
+                findNavController().navigate(R.id.action_startFragment_to_registrationFragment)
 
 
+            }
 
 
         }
 
+    }
 
-
-
-
+    override fun userrespons() {
 
     }
 

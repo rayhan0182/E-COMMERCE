@@ -1,5 +1,4 @@
 package com.example.trendtrove.view
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,23 +15,29 @@ import com.example.trendtrove.databinding.FragmentRegistrationBinding
 import com.example.trendtrove.fragment.BaseFragment
 import com.example.trendtrove.isempty
 import com.example.trendtrove.vmodel.VieModel
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
-//Hair order  function
+@AndroidEntryPoint
 class registrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentRegistrationBinding::inflate) {
-    private val modells : VieModel by viewModels()
+    private val modells: VieModel by viewModels()
 
 
     override fun usercreate() {
 
-        with(binding){
+        with(binding) {
 
             regBtn.setOnClickListener {
 
-                if (!name.isempty()&&!email.isempty()&&!pass.isempty()){
+                if (!name.isempty() && !email.isempty() && !pass.isempty()) {
 
-                    val userdata = Regis(name.text.toString(),email.text.toString()
-
-                        ,pass.text.toString(),"seller","")
+                    val userdata = Regis(
+                        name.text.toString(),
+                        email.text.toString(),
+                        pass.text.toString(),
+                        "seller",
+                        ""
+                    )
 
                     modells.userregis(userdata)
 
@@ -40,11 +45,6 @@ class registrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
 
             }
 
-            haveAcc.setOnClickListener {
-
-                findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
-
-            }
 
         }
 
@@ -52,28 +52,33 @@ class registrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
 
     override fun userrespons() {
 
-        modells.mutablelivedata.observe(viewLifecycleOwner){
+        modells.mutablelivedata.observe(viewLifecycleOwner) {
 
-            when(it){
-                is DataState.Error ->{
+            when (it) {
+                is DataState.Error -> {
 
                     progress.dismiss()
 
-                    Toast.makeText(context,"${it.massage}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "${it.massage}", Toast.LENGTH_LONG).show()
 
                 }
-                is DataState.Loading ->{
+
+                is DataState.Loading -> {
 
                     progress.show()
 
-                    Toast.makeText(context,"Loading", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Loading", Toast.LENGTH_LONG).show()
 
                 }
-                is DataState.Success ->{
+
+                is DataState.Success -> {
 
                     progress.dismiss()
 
-                    Toast.makeText(context,"successful Created:${it.udata}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "successful Created:${it.udata}", Toast.LENGTH_SHORT)
+                        .show()
+
+
 
                 }
             }
@@ -83,6 +88,5 @@ class registrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
 
 
     }
-
 
 }
