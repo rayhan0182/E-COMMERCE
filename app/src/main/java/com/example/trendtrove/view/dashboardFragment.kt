@@ -9,8 +9,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.trendtrove.R
 import com.example.trendtrove.databinding.FragmentDashboardBinding
 import com.example.trendtrove.fragment.BaseFragment
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class dashboardFragment : BaseFragment<FragmentDashboardBinding>(
@@ -19,12 +21,22 @@ class dashboardFragment : BaseFragment<FragmentDashboardBinding>(
 
 ) {
 
+    @Inject
+
+    lateinit var auth: FirebaseAuth
 
     override fun usercreate() {
 
-        binding.click.setOnClickListener {
+        with(binding){
 
-            findNavController().navigate(R.id.action_dashboardFragment_to_startFragment)
+            logout.setOnClickListener {
+
+                auth.signOut()
+
+                findNavController().navigate(R.id.action_dashboardFragment_to_startFragment)
+
+            }
+
 
         }
 

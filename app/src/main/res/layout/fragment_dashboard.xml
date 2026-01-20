@@ -9,12 +9,14 @@
 
 
     <Button
-        android:id="@+id/click"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="click back page"
+        android:text="Logout"
         android:textSize="@dimen/_15ssp"
         android:gravity="center"
         />
+
+
 
 </LinearLayout>

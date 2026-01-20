@@ -9,13 +9,23 @@ import androidx.navigation.fragment.findNavController
 import com.example.trendtrove.R
 import com.example.trendtrove.databinding.FragmentStartBinding
 import com.example.trendtrove.fragment.BaseFragment
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class startFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::inflate) {
 
+    @Inject
+
+    lateinit var auth: FirebaseAuth
+
     override fun usercreate() {
+
+        userlogincheak()
+
+
 
         with(binding) {
 
@@ -35,6 +45,17 @@ class startFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::i
 
 
         }
+
+    }
+
+    private fun userlogincheak() {
+
+        auth.currentUser?.let {
+
+            findNavController().navigate(R.id.action_startFragment_to_dashboardFragment)
+
+        }
+
 
     }
 

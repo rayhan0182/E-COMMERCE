@@ -10,10 +10,12 @@ import com.example.trendtrove.data.models.register.Regis
 import com.example.trendtrove.data.repo.AuthRepository
 import com.google.android.play.core.integrity.r
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 @HiltViewModel
-class VieModel @Inject constructor(private val authRepository: AuthRepository): ViewModel() {
+class VieModel @Inject constructor(private val authins: FirebaseAuth,private val repo: AuthRepository) : ViewModel() {
+
     private val _mutablelivedata  = MutableLiveData<DataState<Regis>>()
 
      val mutablelivedata: LiveData<DataState<Regis>>  = _mutablelivedata
@@ -26,13 +28,29 @@ class VieModel @Inject constructor(private val authRepository: AuthRepository): 
 
         _mutablelivedata.postValue(DataState.Loading())
 
-        authRepository.registration_create(regis).addOnSuccessListener {
+        repo.registration_create(regis).addOnSuccessListener {
 
-            _mutablelivedata.postValue(DataState.Success(regis))
+            it.user?.let {usercreated->
 
-        }.addOnFailureListener {error->
+                regis.userId = usercreated.uid
 
-            _mutablelivedata.postValue(DataState.Error(error.message))
+               repo.firestorecreate(regis).addOnSuccessListener {
+
+                   _mutablelivedata.postValue(DataState.Success(regis))
+
+               }.addOnFailureListener {exception ->
+
+                   _mutablelivedata.postValue(DataState.Error(exception.message.toString()))
+
+               }
+
+            }
+
+
+
+        }.addOnFailureListener {exception ->
+
+            _mutablelivedata.postValue(DataState.Error(exception.message.toString()))
 
         }
 
@@ -42,7 +60,7 @@ class VieModel @Inject constructor(private val authRepository: AuthRepository): 
 
         _mutableloginlivedata.postValue(DataState.Loading())
 
-        authRepository.login_create(login).addOnSuccessListener {
+        repo.login_create(login).addOnSuccessListener {
 
             _mutableloginlivedata.postValue(DataState.Success(login))
 

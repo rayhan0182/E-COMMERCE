@@ -10,5 +10,5 @@ data class Regis(
 
     val usertype: String,
 
-    val user: String
+    var userId: String
 )

@@ -10,4 +10,7 @@ interface Authservice {
     fun registration_create(regis: Regis): Task<AuthResult>
 
     fun login_create(login: Login): Task<AuthResult>
+
+    fun firestorecreate(regis: Regis): Task<Void>
+
 }
