@@ -78,7 +78,7 @@ class registrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
                     Toast.makeText(context, "successful Created:${it.udata}", Toast.LENGTH_SHORT)
                         .show()
 
-                    findNavController().navigate(R.id.action_registrationFragment_to_dashboardFragment)
+                      findNavController().navigate(R.id.productuser)
 
 
 

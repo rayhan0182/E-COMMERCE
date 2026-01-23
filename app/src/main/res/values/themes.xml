@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.TrendTrove" parent="Base.Theme.TrendTrove" />
+    <style name="Theme.TrendTrove.App.Bar" parent="Theme.Material3.DayNight">
+
+        <item name="android:colorPrimary">@color/Grey</item>
+
+    </style>
+
 </resources>

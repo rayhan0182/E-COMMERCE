@@ -75,7 +75,7 @@ import kotlin.getValue
 
                      Toast.makeText(context,"successful Created:${it.udata}", Toast.LENGTH_SHORT).show()
 
-                     findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+                     findNavController().navigate(R.id.productuser)
 
                  }
              }

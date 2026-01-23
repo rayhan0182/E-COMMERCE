@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seller_nav"
+    app:startDestination="@+id/productuser">
+
+    <fragment
+        android:id="@+id/productuser"
+        android:name="com.example.trendtrove.dashboard.seller.ProductFragment"
+        android:label="Product"
+        tools:layout="@layout/fragment_upload" />
+    <fragment
+        android:id="@+id/uploaduser"
+        android:name="com.example.trendtrove.dashboard.seller.UploadFragment"
+        android:label="Upload"
+        tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/profileuser"
+        android:name="com.example.trendtrove.dashboard.seller.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

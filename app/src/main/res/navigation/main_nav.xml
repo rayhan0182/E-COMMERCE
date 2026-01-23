@@ -16,9 +16,7 @@
         <action
             android:id="@+id/action_startFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -28,32 +26,18 @@
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_registrationFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.trendtrove.view.loginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_dashboardFragment2"
-            app:destination="@id/dashboardFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/dashboardFragment"
-        android:name="com.example.trendtrove.view.dashboardFragment"
-        android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
-        <action
-            android:id="@+id/action_dashboardFragment_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
+
 </navigation>
