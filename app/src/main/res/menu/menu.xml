@@ -10,13 +10,13 @@
 
     <item
         android:id="@+id/uploaduser"
-        android:title="Upload Product"
+        android:title="@string/upload"
         android:icon="@drawable/upload"
         />
 
     <item
         android:id="@+id/profileuser"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon="@drawable/profile"
         />
 

@@ -2,5 +2,12 @@
     <string name="app_name">TrendTrove</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="product">Product</string>
+    <string name="menu">menu</string>
+    <string name="report">report</string>
+    <string name="setting">setting</string>
+    <string name="logout">logout</string>
+    <string name="product">product</string>
+    <string name="upload">Upload Product</string>
+    <string name="profile">profile</string>
+
 </resources>

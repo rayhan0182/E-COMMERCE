@@ -9,12 +9,13 @@
         android:id="@+id/productuser"
         android:name="com.example.trendtrove.dashboard.seller.ProductFragment"
         android:label="Product"
-        tools:layout="@layout/fragment_upload" />
+        tools:layout="@layout/fragment_product"/>
     <fragment
         android:id="@+id/uploaduser"
         android:name="com.example.trendtrove.dashboard.seller.UploadFragment"
         android:label="Upload"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_upload"
+         />
     <fragment
         android:id="@+id/profileuser"
         android:name="com.example.trendtrove.dashboard.seller.ProfileFragment"
