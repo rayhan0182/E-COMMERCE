@@ -9,7 +9,7 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-@Suppress("DEPRECATION")
+
 abstract class BaseFragment<VB : ViewBinding>(
     //Hier order Function
     private var layoutinflaterr: (inflater: LayoutInflater) -> VB

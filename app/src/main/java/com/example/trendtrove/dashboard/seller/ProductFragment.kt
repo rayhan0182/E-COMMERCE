@@ -6,16 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.trendtrove.R
+import com.example.trendtrove.databinding.FragmentProductBinding
+import com.example.trendtrove.fragment.BaseFragment
 
-class ProductFragment : Fragment() {
+class ProductFragment : BaseFragment<FragmentProductBinding>(
+
+    FragmentProductBinding::inflate
+
+) {
+    override fun usercreate() {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product, container, false)
+    }
+
+    override fun userrespons() {
+
     }
 
 

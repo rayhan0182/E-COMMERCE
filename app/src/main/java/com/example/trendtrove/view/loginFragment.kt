@@ -1,5 +1,6 @@
 package com.example.trendtrove.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.trendtrove.R
 import com.example.trendtrove.core.DataState
+import com.example.trendtrove.dashboard.DashActivity
 import com.example.trendtrove.data.models.login.Login
 import com.example.trendtrove.databinding.FragmentLoginBinding
 import com.example.trendtrove.fragment.BaseFragment
@@ -33,6 +35,8 @@ import kotlin.getValue
                     val user = Login(email.text.toString(),pass.text.toString())
 
                     viewmdell.userlogin(user)
+
+                    startActivity(Intent(requireContext(), DashActivity::class.java))
 
                 }
 
